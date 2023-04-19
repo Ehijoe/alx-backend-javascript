@@ -1,3 +1,3 @@
-export default function uploadPhoto() {
+export default function getResponseFromAPI() {
   return Promise.resolve();
 }
