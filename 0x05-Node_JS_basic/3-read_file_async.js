@@ -3,6 +3,7 @@ const fs = require('fs');
 function countStudentsFromData(err, data, resolve, reject) {
   if (err) {
     reject(Error('Cannot load the database'));
+    return;
   }
   const fields = [];
   const fieldStudents = {};
@@ -29,7 +30,7 @@ function countStudentsFromData(err, data, resolve, reject) {
   resolve();
 }
 
-async function countStudents(path) {
+function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (err, data) => {
       countStudentsFromData(err, data, resolve, reject);
