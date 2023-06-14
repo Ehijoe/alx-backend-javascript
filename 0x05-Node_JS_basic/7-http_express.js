@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', (req, res) => {
-  countStudents('database.csv', res).then(() => {
+  countStudents(process.argv[2], res).then(() => {
     res.end();
   });
 });
